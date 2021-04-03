@@ -1,5 +1,66 @@
-$bg-color: green;
-
-body {
- background: $bg-color;
+$main_white: white;
+$main_pink:  rgb(235, 8, 84);
+*{
+    font-family: 'New Tegomin', serif;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    .block{
+      border: solid 2px black;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover{
+          background-color: $main_pink;
+          button{
+            background-color: $main_white;
+            color: $main_pink;
+            border-radius: 10px $main_white;
+          }
+          p{
+              color: $main_white;
+          }
+          h1{
+              color: $main_white;
+          }
+      }
+      h1{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 0;
+      }
+      p{
+        text-align: center;
+        padding: 20px;
+      }
+      button{
+        border-radius: 15px;
+        background-color: black;
+        color: white;
+        height: 40px;
+        width: 200px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  $screen-Tablet: '500px';
+  $screen-desktop: '700px';
+@media(max-width: $screen-desktop){
+    .wrapper{
+      flex-wrap: wrap;
+    }
+    .block{
+        max-width: 40%;
+    }
+}
+@media(max-width: $screen-Tablet){
+    .wrapper{
+      flex-wrap: wrap;
+    }
+    .block{
+        max-width: 100%;
+    }
 }
